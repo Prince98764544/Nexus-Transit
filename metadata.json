@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Transit dashboard",
+  "description": "Enterprise multi-agent logistics platform dashboard with AG-UI and A2UI protocols.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

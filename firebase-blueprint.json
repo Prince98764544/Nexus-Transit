@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "User account and preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["COMMANDER", "OPERATOR"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "cases": {
+      "title": "Historical Disruption",
+      "description": "Historical record of supply chain disruptions for predictive analysis",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "scenario": { "type": "string" },
+        "resolution": { "type": "string" },
+        "impactScore": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" },
+        "isPublic": { "type": "boolean" }
+      },
+      "required": ["scenario", "userId"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "users",
+      "description": "Collection of user profiles"
+    },
+    "cases": {
+      "schema": "cases",
+      "description": "Historical disruption memory stored in Firestore"
+    }
+  }
+}

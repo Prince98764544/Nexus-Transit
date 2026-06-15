@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #e0effe;
+  --color-brand-200: #bae0fd;
+  --color-brand-300: #7cc8fb;
+  --color-brand-400: #36acf7;
+  --color-brand-500: #0066FF;
+  --color-brand-600: #0055D4;
+  --color-brand-700: #0044AA;
+  --color-brand-800: #003380;
+  --color-brand-900: #002255;
+
+  --color-apple-white: #FBFBFD;
+  --color-apple-gray: #F5F5F7;
+  --color-apple-dark: #1D1D1F;
+}
+
+@layer base {
+  :root {
+    --background: #FBFBFD;
+    --foreground: #1D1D1F;
+    --muted: #F5F5F7;
+    --muted-foreground: #86868B;
+    --border: rgba(0, 0, 0, 0.1);
+    --card: #FFFFFF;
+    --card-foreground: #1D1D1F;
+    --accent: #E8E8ED;
+    --accent-foreground: #0066FF;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #F5F5F7;
+    --muted: #1D1D1F;
+    --muted-foreground: #86868B;
+    --border: rgba(255, 255, 255, 0.1);
+    --card: #1C1C1E;
+    --card-foreground: #F5F5F7;
+    --accent: #2C2C2E;
+    --accent-foreground: #0A84FF;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased selection:bg-brand-100 selection:text-brand-900;
+  }
+}
+
+.glass {
+  backdrop-filter: blur(20px);
+  background: color-mix(in srgb, var(--card), transparent 20%);
+  border: 1px solid var(--border);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.apple-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.apple-shadow-lg {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
